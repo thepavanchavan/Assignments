@@ -10,15 +10,17 @@
             width: 100px;
             margin: auto;
             background: red;
-            transition: width 2s, height 4s;
+            /* transition: width 2s, height 2s */
+            transition: width 2s, height 2s, transform 2s;
         }
         div:hover{
             height: 300px;
             width: 300px;
+            transform: rotate(180deg);
         }
     </style>
 </head>
 <body>
-    <div class="box"></div>
+    <div></div>
 </body>
 </html>
