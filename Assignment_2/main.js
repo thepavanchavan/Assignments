@@ -8,7 +8,9 @@ var information = [
 
 showTable();
 
-// FUNCTION FOR ADDING NEW 
+console.log(information);
+
+// FUNCTION FOR ADDING NEW ROW
 
 
 function addRow(){
@@ -21,6 +23,7 @@ console.log(id,name,city,branch,degree)
 information.push({"id":id, "name":name, "city":city,"branch":branch, "degree":degree});
 
 showTable()
+console.log(information);
 }
 
 // FUNCTION FOR SHOWING TABLE USING FOREACH 
@@ -52,6 +55,8 @@ return element.id != data.id;
 });
 information = updated_array;
 showTable();
+
+console.log(information);
 }
 
 // FUNCTION FOR SEARCH BY ID
