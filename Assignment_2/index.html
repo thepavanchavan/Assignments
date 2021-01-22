@@ -1,26 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment 2</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assignment 2</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h2>Student Data</h2>
+<div class="container">
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID
+            <br>
+            <input type="text" id="idInput" onkeyup="searchById()" placeholder="Search by ID.." title="Type in a name">
+        </th>
+        <th>Student Name
+            <br><input type="text" id="nameInput" onkeyup="searchByName()" placeholder="Search by name.." title="Type in a name">
+        </th>
+        <th>City
+            <br><input type="text" id="cityInput" onkeyup="searchByCity()" placeholder="Search by city.." title="Type in a name">
+        </th>
+        <th>Department
+            <br><input type="text" id="deptInput" onkeyup="searchByDept()" placeholder="Search by dept.." title="Type in a name">
+        </th>
+        <th>Degree
+            <br><input type="text" id="degreeInput" onkeyup="searchByDegree()" placeholder="Search by degree.." title="Type in a name">
+        </th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody id="myTable">
 
-<input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Search for names.." title="Type in a name">
-    <table class="table">
-        <tr>
-            <th>Name</th>
-            <th>City</th>
-        </tr>
-       <tbody id="myTable">
+    </tbody>
+</table>
+<form>
+</div>
+<div class="container-2">
+<form>
+    <input type="text" class="id-form" name="id-form" placeholder="ID">
+    <input type="text" class="name-form" name="name-form" placeholder="Student Name">
+    <input type="text" class="city-form" name="city-form" placeholder="City">
+    <input type="text" class="dept-form" name="dept-form" placeholder="Department">
+    <input type="text" class="degree-form" name="degree-form" placeholder="Degree">
+    </form>
+    <button id="addButton" onclick="addRow()">ADD ROW</button>
 
-       </tbody>
-    </table>
-    </div>
-    <script src="main.js"></script>
+</div>
+<script src="main.js"></script>
 </body>
 </html>

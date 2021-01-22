@@ -1,33 +1,19 @@
-/* .container{
+ .container{
     position: absolute;
-    border: ;
-    top: 15%;
-    left: 44%
-} */
+    top: 25%;
+    margin-left: 5%;
+}
+.container-2{
+    position: absolute;
+    border: solid 2px rgb(97, 3, 3);  
+    padding: 10px;
+    top: 8%;
+    margin-left: 5%
+} 
 body {
     background: #fceabb;  
     background: -webkit-linear-gradient(to right, #f8b500, #fceabb);  
     background: linear-gradient(to right, #f8b500, #fceabb);
-}
-
-.container{
-  position: absolute;
-  width: 350px;
-  height: 550px;
-  padding: 15px;
-  background: #e1eec3; 
-  background: -webkit-linear-gradient(to right, #f05053, #e1eec3);  
-  background: linear-gradient(to right, #f05053, #e1eec3); 
-  border-radius: 0% 0% 0% 0% / 0% 0% 0% 0% ;
-  color: black;
-  box-shadow: 20px 20px rgba(0,0,0,.15);
-  transition: all .4s ease;
-  top: 6%;
-  left: 35%
-}
-.container:hover {
-  border-radius: 0% 0% 50% 50% / 0% 0% 5% 5% ;
-  box-shadow: 10px 10px rgba(0,0,0,.25);
 }
 h2{
    font-family: cursive;
@@ -36,14 +22,22 @@ h2{
    margin-left: 80px;
    color: black;
 }
-.table{
-    margin: auto;
-}
 #myInput{
     margin: 10px;
-    margin-left: 65px;
+    margin-left: 10px;
 }
 .Add{
     position: relative;
     width: 393px;
 }
+table, td, th {
+    border: 1px solid black;
+  }
+  
+  table {
+    width: 50%;
+    border-collapse: collapse;
+  }
+  th, td{
+      padding: 5px;
+  }
