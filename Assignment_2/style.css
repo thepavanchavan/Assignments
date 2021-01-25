@@ -1,6 +1,6 @@
  .container{
     position: absolute;
-    top: 25%;
+    top: 20%;
     margin-left: 5%;
 }
 .container-2{
@@ -19,7 +19,6 @@ h2{
    font-family: cursive;
    padding: 5px;
    margin: auto;
-   margin-left: 80px;
    color: black;
 }
 #myInput{
@@ -40,4 +39,8 @@ table, td, th {
   }
   th, td{
       padding: 5px;
+  }
+  .newTable{
+    margin-left: 25%;
+    padding: 5px;
   }

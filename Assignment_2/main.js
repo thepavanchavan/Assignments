@@ -20,9 +20,15 @@ var city = document.querySelector(".city-form").value;
 var branch = document.querySelector(".dept-form").value;
 var degree = document.querySelector(".degree-form").value;
 console.log(id,name,city,branch,degree)
+if(id=='' || name=='' || city =='' || branch=='' || degree==''){
+    alert("Please Fill The Complete form")
+}
+else{
 information.push({"id":id, "name":name, "city":city,"branch":branch, "degree":degree});
+}
 
-showTable()
+showTable();
+newInfo();
 console.log(information);
 }
 
@@ -34,15 +40,15 @@ tbody1.innerHTML = "";
 var tableData = ``;
 
 information.forEach((info) => {
-    tableData += `<tr>
-                <td>${info.id}</td>
-                <td>${info.name}</td>
-                <td>${info.city}</td>
-                <td>${info.branch}</td>
-                <td>${info.degree}</td>
-                <td id="${info.id}" onclick="editItem(this)"><button>Edit</button></td>
-                <td id="${info.id}" onclick="deleteItem(this)"><button>Delete</button></td>
-            </tr>` 
+tableData += `<tr>
+        <td>${info.id}</td>
+        <td>${info.name}</td>
+        <td>${info.city}</td>
+        <td>${info.branch}</td>
+        <td>${info.degree}</td>
+        <td id="${info.id}" onclick = "editItem(this);"><button>Update</button></td>
+        <td id="${info.id}" onclick="deleteItem(this)"><button>Delete</button></td>
+    </tr>` 
 });
 tbody1.innerHTML = tableData
 }
@@ -55,9 +61,51 @@ return element.id != data.id;
 });
 information = updated_array;
 showTable();
-
+newInfo();
 console.log(information);
 }
+
+
+// FUNCTION FOR UPDATE
+
+
+function editItem(data){
+var objIndex = information.findIndex((obj => obj.id == data.id));
+information[objIndex].name = information[objIndex].name+ " (Updated)";
+information[objIndex].city = information[objIndex].city+" (Updated)";
+information[objIndex].branch = information[objIndex].branch+" (Updated)";
+information[objIndex].degree = information[objIndex].degree+" (Updated)";
+showTable();
+newInfo();
+}
+
+
+// FUNCTION WITH APPLICATION OF MAP
+
+function newInfo(){
+var newInformation = information.map(item =>{
+    return{
+        name: item.name,
+        city: item.city,
+        branch: item.branch
+    };
+});
+
+var tbody1 = document.getElementById("newTableBody")
+tbody1.innerHTML = "";
+var tableData = ``;
+
+newInformation.forEach((info) => {
+tableData += `<tr>
+        <td>${info.name}</td>
+        <td>${info.city}</td>
+        <td>${info.branch}</td>
+    </tr>` 
+});
+tbody1.innerHTML = tableData
+}
+newInfo();
+
 
 // FUNCTION FOR SEARCH BY ID
 
@@ -69,16 +117,16 @@ filter = input.value.toUpperCase();
 table = document.getElementById('myTable');
 tableRow = table.getElementsByTagName("tr");
 for(i=0; i<tableRow.length; i++){
-    tableData = tableRow[i].getElementsByTagName("td")[0];
-    if(tableData){
-        textValue = tableData.textContent || tableData.innerText;
-        if(textValue.toUpperCase().indexOf(filter) > -1){
-            tableRow[i].style.display = "";
-        }
-        else{
-            tableRow[i].style.display = "none";
-        }
-    }
+tableData = tableRow[i].getElementsByTagName("td")[0];
+if(tableData){
+textValue = tableData.textContent || tableData.innerText;
+if(textValue.toUpperCase().indexOf(filter) > -1){
+    tableRow[i].style.display = "";
+}
+else{
+    tableRow[i].style.display = "none";
+}
+}
 }
 }
 
@@ -91,16 +139,16 @@ filter = input.value.toUpperCase();
 table = document.getElementById('myTable');
 tableRow = table.getElementsByTagName("tr");
 for(i=0; i<tableRow.length; i++){
-    tableData = tableRow[i].getElementsByTagName("td")[1];
-    if(tableData){
-        textValue = tableData.textContent || tableData.innerText;
-        if(textValue.toUpperCase().indexOf(filter) > -1){
-            tableRow[i].style.display = "";
-        }
-        else{
-            tableRow[i].style.display = "none";
-        }
-    }
+tableData = tableRow[i].getElementsByTagName("td")[1];
+if(tableData){
+textValue = tableData.textContent || tableData.innerText;
+if(textValue.toUpperCase().indexOf(filter) > -1){
+    tableRow[i].style.display = "";
+}
+else{
+    tableRow[i].style.display = "none";
+}
+}
 }
 }
 
@@ -114,16 +162,16 @@ filter = input.value.toUpperCase();
 table = document.getElementById('myTable');
 tableRow = table.getElementsByTagName("tr");
 for(i=0; i<tableRow.length; i++){
-    tableData = tableRow[i].getElementsByTagName("td")[2];
-    if(tableData){
-        textValue = tableData.textContent || tableData.innerText;
-        if(textValue.toUpperCase().indexOf(filter) > -1){
-            tableRow[i].style.display = "";
-        }
-        else{
-            tableRow[i].style.display = "none";
-        }
-    }
+tableData = tableRow[i].getElementsByTagName("td")[2];
+if(tableData){
+textValue = tableData.textContent || tableData.innerText;
+if(textValue.toUpperCase().indexOf(filter) > -1){
+    tableRow[i].style.display = "";
+}
+else{
+    tableRow[i].style.display = "none";
+}
+}
 }
 }
 
@@ -137,16 +185,16 @@ filter = input.value.toUpperCase();
 table = document.getElementById('myTable');
 tableRow = table.getElementsByTagName("tr");
 for(i=0; i<tableRow.length; i++){
-    tableData = tableRow[i].getElementsByTagName("td")[3];
-    if(tableData){
-        textValue = tableData.textContent || tableData.innerText;
-        if(textValue.toUpperCase().indexOf(filter) > -1){
-            tableRow[i].style.display = "";
-        }
-        else{
-            tableRow[i].style.display = "none";
-        }
-    }
+tableData = tableRow[i].getElementsByTagName("td")[3];
+if(tableData){
+textValue = tableData.textContent || tableData.innerText;
+if(textValue.toUpperCase().indexOf(filter) > -1){
+    tableRow[i].style.display = "";
+}
+else{
+    tableRow[i].style.display = "none";
+}
+}
 }
 }
 
@@ -160,15 +208,15 @@ filter = input.value.toUpperCase();
 table = document.getElementById('myTable');
 tableRow = table.getElementsByTagName("tr");
 for(i=0; i<tableRow.length; i++){
-    tableData = tableRow[i].getElementsByTagName("td")[4];
-    if(tableData){
-        textValue = tableData.textContent || tableData.innerText;
-        if(textValue.toUpperCase().indexOf(filter) > -1){
-            tableRow[i].style.display = "";
-        }
-        else{
-            tableRow[i].style.display = "none";
-        }
-    }
+tableData = tableRow[i].getElementsByTagName("td")[4];
+if(tableData){
+textValue = tableData.textContent || tableData.innerText;
+if(textValue.toUpperCase().indexOf(filter) > -1){
+    tableRow[i].style.display = "";
+}
+else{
+    tableRow[i].style.display = "none";
+}
+}
 }
 }
