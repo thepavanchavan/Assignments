@@ -46,7 +46,7 @@ tableData += `<tr>
         <td>${info.city}</td>
         <td>${info.branch}</td>
         <td>${info.degree}</td>
-        <td id="${info.id}" onclick = "editItem(this);"><button>Update</button></td>
+        <td id="${info.id}" onclick = "editItem(this);"><button>Edit</button></td>
         <td id="${info.id}" onclick="deleteItem(this)"><button>Delete</button></td>
     </tr>` 
 });
@@ -68,15 +68,23 @@ console.log(information);
 
 // FUNCTION FOR UPDATE
 
-
+var selectedIndex = -1;
 function editItem(data){
-var objIndex = information.findIndex((obj => obj.id == data.id));
+selectedIndex = data.parentNode.rowIndex;
+var studObject = information[selectedIndex-1];
+console.log(studObject.branch);
+document.getElementById("id-form").value = studObject.id;
+document.getElementById("name-form").value = studObject.name;
+document.getElementById("city-form").value = studObject.city;
+document.getElementById("addButton").innerHTML = "Update"
+/*var objIndex = information.findIndex((obj => obj.id == data.id));
 information[objIndex].name = information[objIndex].name+ " (Updated)";
 information[objIndex].city = information[objIndex].city+" (Updated)";
 information[objIndex].branch = information[objIndex].branch+" (Updated)";
-information[objIndex].degree = information[objIndex].degree+" (Updated)";
+information[objIndex].degree = information[objIndex].degree+" (Updated)";*/
 showTable();
 newInfo();
+console.log(information);
 }
 
 

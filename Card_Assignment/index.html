@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Document</title>
+<style>
+    .card {
+    box-shadow: 0 4px 8px 0 rgba(40, 0, 105, 0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    padding: 20px;
+    display: inline-block;
+    margin: 10px;
+    background-color: aliceblue;
+    }
+    .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }
+    .card h3{
+        padding: 5px;
+        color:rgb(1, 92, 92)
+    }
+    .card h2{
+        color:darkred
+    }
+  body{
+      height: 100%;
+  }
+</style>
+</head>
+<body>
+<div id="main">
+</div>
+</body>
+<script>
+    var information = [
+        {'id':'11','name': 'John', 'city': 'Mumbai','branch':'CSE','degree': 'BTech' },
+        {'id':'22','name': 'Leo', 'city': 'Delhi', 'branch':'Mechanical','degree': 'MTech' },
+        {'id':'33','name': 'Ram', 'city': 'Pune', 'branch':'CSE','degree': 'PHD' },
+        {'id':'44','name': 'Julia', 'city': 'Nashik', 'branch':'IT','degree': 'BCS' },
+        {'id':'55','name': 'Johny', 'city': 'Kolkata', 'branch':'Aerospace','degree': 'MS' },
+        {'id':'66','name': 'Omkar', 'city': 'Solapur', 'branch':'Finance','degree': 'MBA' }
+        ]
+
+        showData();
+        
+        function showData(){
+            var card = document.getElementById("main");
+            console.log(card);
+            information.forEach((info)=>{
+                const content =`
+                <div class ="card">
+                    <h2> Data of ${info.name}</h2>
+                    <h3>Name: ${info.name}</h3>
+                    <h3>City: ${info.city}</h3>
+                    <h3>Branch: ${info.branch}</h3>
+                    <h3> Degree: ${info.degree}</h3>
+                    </div>`;
+                    card.innerHTML += content; 
+            });
+        }
+</script>
+</html>
